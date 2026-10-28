@@ -167,6 +167,6 @@
   }
   /* Extra bottom padding to body to prevent mobile bar from overlapping content */
   body {
-    padding-bottom: 72px;
+    padding-bottom: 96px;
   }
 }

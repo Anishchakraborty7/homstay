@@ -111,7 +111,7 @@ export default function Contact({ preselectedRoom = "" }) {
                   <a href={`tel:${phoneNumber.replace(/\s+/g, "")}`} className="channel-value">
                     {phoneNumber}
                   </a>
-                  {secondaryPhone && (
+                  {secondaryPhone && secondaryPhone !== phoneNumber && (
                     <a
                       href={`tel:${secondaryPhone.replace(/\s+/g, "")}`}
                       className="channel-value secondary"
@@ -301,7 +301,7 @@ export default function Contact({ preselectedRoom = "" }) {
                 {/* Submit to WhatsApp */}
                 <button type="submit" className="btn btn-whatsapp w-full enquiry-submit-btn">
                   <MessageCircle size={18} />
-                  <span>Send Booking Enquiry on WhatsApp</span>
+                  <span>Send WhatsApp Enquiry</span>
                 </button>
 
                 {/* Policy Disclaimer */}

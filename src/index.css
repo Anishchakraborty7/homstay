@@ -255,6 +255,13 @@ input, select, textarea {
   color: var(--color-secondary);
 }
 
+.bg-dark-forest .booking-form-card h1,
+.bg-dark-forest .booking-form-card h2,
+.bg-dark-forest .booking-form-card h3,
+.bg-dark-forest .booking-form-card h4 {
+  color: var(--color-primary-dark) !important;
+}
+
 .bg-dark-forest .section-title {
   color: var(--color-secondary);
 }
