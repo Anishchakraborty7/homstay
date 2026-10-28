@@ -1,0 +1,172 @@
+/* Floating WhatsApp & Sticky Action Bar */
+
+/* Desktop Floating Button */
+.floating-whatsapp-wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 990;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.floating-whatsapp-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  border: 2px solid #FFFFFF;
+  position: relative;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  background-color: #1EBE5D;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+.pulse-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: pulseRipple 2.2s infinite;
+  opacity: 0.7;
+}
+
+@keyframes pulseRipple {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* Tooltip bubble */
+.floating-tooltip {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.15rem;
+  max-width: 250px;
+  box-shadow: var(--shadow-lg);
+  animation: slideFadeIn 0.3s ease-out;
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tooltip-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  color: var(--color-text-muted);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-badge {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.tooltip-text {
+  font-size: 0.8rem;
+  color: var(--color-text);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Mobile Sticky Bottom Action Bar */
+.mobile-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(248, 245, 239, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(198, 166, 107, 0.3);
+  padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px)) 1rem;
+  z-index: 995;
+  display: none;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 0.65rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-bottom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mobile-bottom-btn.call-btn {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.mobile-bottom-btn.whatsapp-btn {
+  background-color: #25D366;
+  color: #FFFFFF;
+}
+
+/* Visibility toggles */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: grid !important;
+  }
+  /* Extra bottom padding to body to prevent mobile bar from overlapping content */
+  body {
+    padding-bottom: 72px;
+  }
+}

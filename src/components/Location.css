@@ -1,0 +1,254 @@
+/* Location Section Styles */
+.location-section {
+  position: relative;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: stretch;
+}
+
+/* Left details column */
+.location-details-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.address-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.address-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(24, 61, 50, 0.08);
+  color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.address-estate-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.35rem;
+}
+
+.address-full-text {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.address-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Transit Hubs */
+.connectivity-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.connectivity-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.connectivity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transit-hub-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.hub-icon-wrapper {
+  color: var(--color-accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hub-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hub-name {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.hub-distance {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Arrival tips */
+.arrival-tips-card {
+  background-color: rgba(198, 166, 107, 0.1);
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+}
+
+.tips-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.tips-icon {
+  color: var(--color-accent-dark);
+}
+
+.tips-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+}
+
+.tips-body {
+  font-size: 0.86rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Right map column */
+.location-map-col {
+  display: flex;
+}
+
+.map-frame-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  display: block;
+}
+
+.map-floating-card {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  background-color: rgba(248, 245, 239, 0.96);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(198, 166, 107, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.map-pin-pulse {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(24, 61, 50, 0.25);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(24, 61, 50, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(24, 61, 50, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(24, 61, 50, 0); }
+}
+
+.map-card-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.map-card-text strong {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-primary-dark);
+}
+
+.map-card-text span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.map-cta-btn {
+  padding: 0.45rem 1rem;
+  font-size: 0.76rem;
+}
+
+/* Responsive queries */
+@media (max-width: 1024px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+  .map-frame-wrapper {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .address-card {
+    flex-direction: column;
+  }
+  .map-floating-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .map-cta-btn {
+    width: 100%;
+  }
+}

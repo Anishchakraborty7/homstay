@@ -1,0 +1,113 @@
+/* Amenities Section Styles */
+.amenities-section {
+  position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: 3.5rem;
+}
+
+.amenity-card {
+  background-color: rgba(15, 39, 32, 0.6);
+  border: 1px solid rgba(198, 166, 107, 0.22);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  transition: all var(--transition-normal);
+}
+
+.amenity-card:hover {
+  background-color: rgba(15, 39, 32, 0.85);
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.amenity-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(198, 166, 107, 0.25) 0%, rgba(198, 166, 107, 0.08) 100%);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.amenity-card:hover .amenity-icon-box {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+
+.amenity-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.amenity-title {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.amenity-desc {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: rgba(248, 245, 239, 0.72);
+}
+
+/* Bottom Assurance Note */
+.amenities-bottom-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: rgba(15, 39, 32, 0.4);
+  border: 1px solid rgba(248, 245, 239, 0.1);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 0.84rem;
+  color: rgba(248, 245, 239, 0.8);
+  text-align: center;
+}
+
+.assurance-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Responsive queries */
+@media (max-width: 1024px) {
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .amenity-card {
+    padding: 1.25rem;
+  }
+  .amenities-bottom-note {
+    border-radius: var(--radius-md);
+    text-align: left;
+  }
+}
